@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🎨 DESIGN CONTRACT - Brand Colors & Fonts */
+:root {
+  /* Typography */
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+  
+  /* Brand Colors - USE THESE! */
+  --brand-primary: theme('colors.indigo.600');
+  --brand-primary-hover: theme('colors.indigo.700');
+  --brand-secondary: theme('colors.slate.900');
+  --brand-accent: theme('colors.emerald.500');
+  --brand-primary-light: theme('colors.indigo.50');
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* 🎨 DESIGN CONTRACT ENFORCED CLASSES */
+/* Use these in components for consistency! */
+.text-brand-primary { color: var(--brand-primary); }
+.bg-brand-primary { background-color: var(--brand-primary); }
+.bg-brand-primary-light { background-color: var(--brand-primary-light); }
+.border-brand-primary { border-color: var(--brand-primary); }
+
+/* Premium Typography Utilities */
+.heading-hero {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--brand-secondary);
+}
+
+.heading-section {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--brand-secondary);
+}
+
+.text-body-primary {
+  font-family: var(--font-body);
+  color: var(--brand-secondary);
+}
+
+.text-body-secondary {
+  font-family: var(--font-body);
+  color: rgb(100, 116, 139);
+}
+
+/* Premium Card Styles */
+.card-premium {
+  background-color: white;
+  border-radius: 1rem;
+  border: 1px solid rgb(226, 232, 240);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  transition: all 0.3s ease;
+}
+
+.card-premium:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  transform: translateY(-4px);
+}
+
+/* Premium Button Styles */
+.btn-primary {
+  background-color: var(--brand-primary);
+  color: white;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-primary-hover);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--brand-primary);
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgb(226, 232, 240);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background-color: var(--brand-primary-light);
+  border-color: var(--brand-primary);
+}
+
+/* Section Spacing */
+.section-py {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-py {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* Container Utilities */
+.container-premium {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .container-premium {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-premium {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* Smooth Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
